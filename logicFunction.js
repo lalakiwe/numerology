@@ -82,8 +82,6 @@ function getNumbers(year, month, day, hour, minute, clickNumber) {
         return p;
     }
 
-    clickNumber =3
-
     function getLines(points, clickNumber) {
         var p = points;
         var lines = [];
