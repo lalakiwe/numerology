@@ -1,0 +1,62 @@
+<html>
+    <head>
+	    <meta charset="UTF-8">
+	    <link rel="stylesheet" href="./style.css">
+    </head>
+	
+    <body onload="onLoad();">
+        <script type="application/javascript" src="./layout.js"></script>
+        <div class='container' >  	  
+            <!-- <div id='div1' style="position:absolute; top:10px; left:10px; z-index:1">   -->
+            <div id='div1'>  
+                <canvas id='canvas' >
+                     Your browser does not support HTML5 Canvas.
+                </canvas>
+	        </div>
+			
+	        <div id='div2'>  	    
+				<form>
+					出生年月日:<br>
+					西元: <input style="margin-top:10px;" type="text" name="year" value=""><br>
+					月: <input style="margin-top:10px;" type="text" name="month" value=""><br>
+					日: <input style="margin-top:10px;" type="text" name="day" value=""><br>
+					時: 
+					<select style="margin-top:10px;" name="hour">
+					　<option value="0">0</option>
+					　<option value="1">1</option>
+					　<option value="2">2</option>
+					　<option value="3">3</option>
+					　<option value="4">4</option>
+					　<option value="5">5</option>
+					　<option value="6">6</option>
+					　<option value="7">7</option>
+					　<option value="8">8</option>
+					　<option value="9">9</option>
+					　<option value="10">10</option>
+					　<option value="11">11</option>
+					　<option value="12">12</option>
+					　<option value="13">13</option>
+					　<option value="14">14</option>
+					　<option value="15">15</option>
+					　<option value="16">16</option>
+					　<option value="17">17</option>
+					　<option value="18">18</option>
+					　<option value="19">19</option>
+					　<option value="20">20</option>
+					　<option value="21">21</option>
+					　<option value="22">22</option>
+					　<option value="23">23</option>
+					</select>
+					<br>
+					分: <input style="margin-top:10px;" type="text" name="minute" value=""><br>
+
+					<!--<input style="margin-top:10px;" type="submit" value="Submit">-->
+				</form>
+				<div>  
+				    <button onclick="drawLine(0,0,150,100)">Click me</button>
+		        </div>
+		    </div>
+
+        </div>  
+    </body>
+</html>

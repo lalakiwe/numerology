@@ -1,0 +1,31 @@
+
+
+.container {
+    background-color: #f1f1f1;
+    width: 100%;
+    overflow: auto;
+    position: absolute;
+    top: 5px;
+    bottom: 0;
+    height: auto;
+    min-height: 250px;
+    min-width: 550px;
+}
+
+div {
+    display: block;
+}
+
+
+#div1 {
+      float:left; width:50%; height:100%;
+}
+
+
+#div2 {
+      float:left; width:50%; height:100%;
+}
+
+#canvas{
+	width:100%;
+}
