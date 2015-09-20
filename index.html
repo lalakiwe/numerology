@@ -17,11 +17,11 @@
 	        <div id='div2'>  	    
 				<form>
 					出生年月日:<br>
-					西元: <input style="margin-top:10px;" type="text" name="year" value=""><br>
-					月: <input style="margin-top:10px;" type="text" name="month" value=""><br>
-					日: <input style="margin-top:10px;" type="text" name="day" value=""><br>
+					西元: <input id='year' style="margin-top:10px;" type="number" name="year" value=""><br>
+					月: <input id='month' style="margin-top:10px;" type="number" name="month" value=""><br>
+					日: <input id='day' style="margin-top:10px;" type="number" name="day" value=""><br>
 					時: 
-					<select style="margin-top:10px;" name="hour">
+					<select id='hour' style="margin-top:10px;" name="hour">
 					　<option value="0">0</option>
 					　<option value="1">1</option>
 					　<option value="2">2</option>
@@ -48,12 +48,15 @@
 					　<option value="23">23</option>
 					</select>
 					<br>
-					分: <input style="margin-top:10px;" type="text" name="minute" value=""><br>
+					分: <input id='minute' style="margin-top:10px;" type="text" name="minute" value=""><br>
 
 					<!--<input style="margin-top:10px;" type="submit" value="Submit">-->
 				</form>
 				<div>  
-				    <button onclick="drawLine(0,0,150,100)">Click me</button>
+				    <button onclick="onClickSubmit()">Submit</button>
+		        </div>
+				<div>  
+				    <button id='taggleButton' onclick="onClickTaggle()">oldLines</button>
 		        </div>
 		    </div>
 
