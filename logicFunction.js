@@ -1,6 +1,6 @@
 function getNumbers(year, month, day, hour, minute, clickNumber) {
 
-    function seperateNumbers(num) {
+    function separateNumbers(num) {
         var out = [];
         var str = '';
         if(typeof num === 'string') {
@@ -31,13 +31,13 @@ function getNumbers(year, month, day, hour, minute, clickNumber) {
             circle[i] = 0;
         }
 
-        seperateNumbers(year).forEach(function(num) {
+        separateNumbers(year).forEach(function(num) {
             circle[num]++;
         });
-        seperateNumbers(month).forEach(function(num) {
+        separateNumbers(month).forEach(function(num) {
             circle[num]++;
         });
-        seperateNumbers(day).forEach(function(num) {
+        separateNumbers(day).forEach(function(num) {
             circle[num]++;
         });
 
@@ -49,6 +49,15 @@ function getNumbers(year, month, day, hour, minute, clickNumber) {
         }
 
         return circle;
+    }
+
+    function getCircleObject(circles) {
+        var output = [];
+        for(var i = 0; i < 10; i++) {
+            if(circle[i] > 0)
+                output.push({index:i, count:circle[i]});
+        }
+        return output;
     }
 
     function getTriangle(masterNumberObj) {
@@ -166,18 +175,18 @@ function getNumbers(year, month, day, hour, minute, clickNumber) {
         }
         else {
             // normal case
-            seperateNumbers(year).forEach(function(num) {
+            separateNumbers(year).forEach(function(num) {
                 sum1 += num;
             });
-            seperateNumbers(month).forEach(function(num) {
+            separateNumbers(month).forEach(function(num) {
                 sum1 += num;
             });
-            seperateNumbers(day).forEach(function(num) {
+            separateNumbers(day).forEach(function(num) {
                 sum1 += num;
             });
         }
 
-        seperateNumbers(sum1).forEach(function(num) {
+        separateNumbers(sum1).forEach(function(num) {
             sum2 += num;
             acquiredNumber.push(num);
         });
@@ -188,7 +197,7 @@ function getNumbers(year, month, day, hour, minute, clickNumber) {
         // might not happen
         if(sum2 >= 10) {
             var sum3 = 0;
-            seperateNumbers(sum2).forEach(function(num) {
+            separateNumbers(sum2).forEach(function(num) {
                 sum3 += num;
                 acquiredNumber.push(num);
             });
@@ -215,19 +224,19 @@ function getNumbers(year, month, day, hour, minute, clickNumber) {
             outputSecretNumber[i] = '';
         }
 
-        seperateNumbers(year).forEach(function(num) {
+        separateNumbers(year).forEach(function(num) {
             levelSum[0] += num;
         });
-        seperateNumbers(month).forEach(function(num) {
+        separateNumbers(month).forEach(function(num) {
             levelSum[1] += num;
         });
-        seperateNumbers(day).forEach(function(num) {
+        separateNumbers(day).forEach(function(num) {
             levelSum[2] += num;
         });
-        seperateNumbers(hour).forEach(function(num) {
+        separateNumbers(hour).forEach(function(num) {
             levelSum[3] += num;
         });
-        seperateNumbers(minute).forEach(function(num) {
+        separateNumbers(minute).forEach(function(num) {
             levelSum[4] += num;
         });
 
@@ -260,7 +269,7 @@ function getNumbers(year, month, day, hour, minute, clickNumber) {
         masterNumber : masterNumber.masterFateNumber,
         acquiredNumberString : masterNumber.acquiredNumberString,
         levelNumber : getLevelNumber(year, month, day, hour, minute),
-        circle : circle,
+        circle : getCircleObject(circle),
         triangle : triangle,
         rectangle: rectangle,
         oldLines : getOldLines(circle, triangle, rectangle, clickNumber),
