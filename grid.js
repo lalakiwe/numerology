@@ -60,10 +60,9 @@ function gridObject(){
 		x : 0,
 		y : 0
 	};
-	
 
 
-	function initCanvas(){	
+    this.initCanvas = function(){
 		var canvas = document.getElementById("canvas");
 		if (canvas.getContext) {
 			canvas.width = window.innerWidth;
@@ -252,10 +251,6 @@ function gridObject(){
 		//var width = canvasContext.measureText('1').width; 
 		//var heigh = canvasContext.measureText('1').height; 
 		//document.getElementById("p1").innerHTML = "/       **"+width+","+heigh;	
-	}
-	
-	return {
-		initCanvas:initCanvas
 	}
 }
 
